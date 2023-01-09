@@ -4,6 +4,8 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -26,6 +28,7 @@ public class TiantongMain implements ModInitializer {
 	public static final Item Oyster = new Oyster(new FabricItemSettings().maxCount(1));
 	//public static final ScoreboardObjective OysterBank = new Scoreboard()
 	//		.addObjective("OysterBank", ScoreboardCriterion.DUMMY, Text.empty(), ScoreboardCriterion.RenderType.INTEGER);
+	public static final StairsBlock Iron_Stairs = new StairsBlock(Blocks.IRON_BLOCK.getDefaultState(),FabricBlockSettings.of(Material.METAL));
 	private static final ItemGroup Tiantong = FabricItemGroup.builder(new Identifier("tiantong", "tiantong"))
 			.icon(() -> new ItemStack(Oyster))
 			.build();
@@ -35,8 +38,10 @@ public class TiantongMain implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		Registry.register(Registries.ITEM, new Identifier("tiantong", "oyster"), Oyster);
+		Registry.register(Registries.BLOCK, new Identifier("tiantong", "iron_stairs"), Iron_Stairs);
 		ItemGroupEvents.modifyEntriesEvent(Tiantong).register(content -> {
 			content.add(Oyster);
+			content.addAfter(Iron_Stairs, Oyster);
 		});
 		LOGGER.info("Welcome to Tiantong City");
 	}
