@@ -31,23 +31,50 @@ public class TicketSystem {
     public static final String Balance = "OysterBank";
     public static final String Entrance = "Entrance";
     public static final ScoreboardPlayerScore GetScore(World world, PlayerInfo player) {
+        Check(world);
         return world.getScoreboard().getPlayerScore(player.getName(), world.getScoreboard().getObjective(Balance));
     }
     public static final boolean Pass(World world, int id, PlayerInfo player) {
+        Check(world);
         if(id == 0) {
             if(GetScore(world, player).getScore() >= 0) {
-
+                final ScoreboardPlayerScore En = world.getScoreboard().getPlayerScore(player.getName(), world.getScoreboard().getObjective(Entrance));
+                if(En.getScore() == -1) {
+                    final ScoreboardPlayerScore Sc = GetScore(world, player);
+                    Sc.setScore(Sc.getScore() - 1000);
+                }
                 return true;
             }
             else
                 return false;
         }
         else if(id == 1) {
-            if(GetScore(world, player).getScore() >= 20)
-                return true;
-            else
-                return false;
+            boolean PassOut = GetScore(world, player).getScore() >= 20;
+            if(PassOut) {
+                final ScoreboardPlayerScore Sc = GetScore(world, player);
+                Sc.setScore(Sc.getScore() - 20);
+            }
+            else {
+                final ScoreboardPlayerScore Sc = GetScore(world, player);
+                Sc.setScore(Sc.getScore() - 50);
+            }
+            return PassOut;
         }
         return false;
+    }
+
+    public static final void Check(World world) {
+        if(!world.getScoreboard().containsObjective("Balance")) {
+            try {
+                world.getScoreboard().addObjective(Balance, ScoreboardCriterion.DUMMY, Text.translatable(Balance), ScoreboardCriterion.RenderType.INTEGER);
+            }
+            catch (Exception Ignored) {
+            }
+            try {
+                world.getScoreboard().addObjective(Entrance, ScoreboardCriterion.DUMMY, Text.translatable(Entrance), ScoreboardCriterion.RenderType.INTEGER);
+            }
+            catch (Exception Ignored) {
+            }
+        }
     }
 }

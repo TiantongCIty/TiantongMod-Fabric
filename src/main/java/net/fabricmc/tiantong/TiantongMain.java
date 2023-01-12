@@ -46,6 +46,8 @@ public class TiantongMain implements ModInitializer {
 			.icon(() -> new ItemStack(Oyster))
 			.build();
 	public static final StairsBlock Iron_Stairs = new StairsBlock(Blocks.IRON_BLOCK.getDefaultState(),FabricBlockSettings.of(Material.METAL));
+	//public static final Block Ok = new Block(FabricBlockSettings.of(Material.METAL));
+	public static final Item Iron_Stiars_Item = Iron_Stairs.asItem();
 
 	@Override
 	public void onInitialize() {
@@ -53,11 +55,13 @@ public class TiantongMain implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-		Registry.register(Registries.ITEM, new Identifier("tiantong", "oyster"), Oyster);
 		Registry.register(Registries.BLOCK, new Identifier("tiantong", "iron_stairs"), Iron_Stairs);
+		//Registry.register(Registries.BLOCK, new Identifier("tiantong", "ok"), Ok);
+		//Registry.register(Registries.ITEM, new Identifier("tiantong", "iron_stairs"), Iron_Stiars_Item );
+		Registry.register(Registries.ITEM, new Identifier("tiantong", "oyster"), Oyster);
 		ItemGroupEvents.modifyEntriesEvent(Tiantong).register(content -> {
 			content.add(Oyster);
-			//content.addAfter(Oyster, Iron_Stairs);
+			content.addAfter(Oyster, Iron_Stairs);
 		});
 
 		LOGGER.info("Welcome to Tiantong City");
