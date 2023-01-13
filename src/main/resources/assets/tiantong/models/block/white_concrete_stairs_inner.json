@@ -1,7 +1,7 @@
 {
-    "parent": "minecraft:block/stairs",
+    "parent": "minecraft:block/inner_stairs",
     "textures": {
-      "bottom": "minecraft:block/iron_block",
+      "bottom": "minecraft:block/white_concrete",
       "side": "minecraft:block/iron_block",
       "top": "minecraft:block/iron_block"
     }

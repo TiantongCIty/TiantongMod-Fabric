@@ -1,5 +1,21 @@
 {
     "item.tiantong.oyster": "Oyster Card",
     "itemGroup.tiantong.tiantong": "天通",
-    "item.tiantong.iron_stairs": "铁质楼梯"
+    "block.tiantong.iron_stairs": "铁质楼梯",
+    "block.tiantong.white_concrete_stairs": "白色混凝土楼梯",
+    "block.tiantong.light_gray_concrete_stairs": "淡灰色混凝土楼梯",
+    "block.tiantong.gray_concrete_stairs": "灰色混凝土楼梯",
+    "block.tiantong.black_concrete_stairs": "黑色混凝土楼梯",
+    "block.tiantong.brown_concrete_stairs": "棕色混凝土楼梯",
+    "block.tiantong.red_concrete_stairs": "红色混凝土楼梯",
+    "block.tiantong.orange_concrete_stairs": "橙色混凝土楼梯",
+    "block.tiantong.yellow_concrete_stairs": "黄色混凝土楼梯",
+    "block.tiantong.lime_concrete_stairs": "黄绿色混凝土楼梯",
+    "block.tiantong.green_concrete_stairs": "绿色混凝土楼梯",
+    "block.tiantong.cyan_concrete_stairs": "青色混凝土楼梯",
+    "block.tiantong.light_blue_concrete_stairs": "淡蓝色混凝土楼梯",
+    "block.tiantong.blue_concrete_stairs": "蓝色混凝土楼梯",
+    "block.tiantong.purple_concrete_stairs": "紫色混凝土楼梯",
+    "block.tiantong.magenta_concrete_stairs": "品红色混凝土楼梯",
+    "block.tiantong.pink_concrete_stairs": "粉红色混凝土楼梯"
 }

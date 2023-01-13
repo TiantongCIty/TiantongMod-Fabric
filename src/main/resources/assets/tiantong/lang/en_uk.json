@@ -1,5 +1,21 @@
 {
     "item.tiantong.oyster": "Oyster Card",
     "itemGroup.tiantong.tiantong": "Tiantong",
-    "item.tiantong.iron_stairs": "Iron Stairs"
+    "block.tiantong.iron_stairs": "Iron Stairs",
+    "block.tiantong.white_concrete_stairs": "White Concrete",
+    "block.tiantong.light_gray_concrete_stairs": "Light Grey Concrete",
+    "block.tiantong.gray_concrete_stairs": "Grey Concrete",
+    "block.tiantong.black_concrete_stairs": "Black Concrete",
+    "block.tiantong.brown_concrete_stairs": "Brown Concrete",
+    "block.tiantong.red_concrete_stairs": "Red Concrete",
+    "block.tiantong.orange_concrete_stairs": "Orange Concrete",
+    "block.tiantong.yellow_concrete_stairs": "Yellow Concrete",
+    "block.tiantong.lime_concrete_stairs": "Lime Concrete",
+    "block.tiantong.green_concrete_stairs": "Green Concrete",
+    "block.tiantong.cyan_concrete_stairs": "Cyan Concrete",
+    "block.tiantong.light_blue_concrete_stairs": "Light Blue Concrete",
+    "block.tiantong.blue_concrete_stairs": "Blue Concrete",
+    "block.tiantong.purple_concrete_stairs": "Purple Concrete",
+    "block.tiantong.magenta_concrete_stairs": "Magenta Concrete",
+    "block.tiantong.pink_concrete_stairs": "Pink Concrete"
 }
