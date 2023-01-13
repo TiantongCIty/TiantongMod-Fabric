@@ -1,7 +1,8 @@
-package net.fabricmc.tiantong;
+package net.fabricmc.tiantong.items;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.tiantong.TiantongMain;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
