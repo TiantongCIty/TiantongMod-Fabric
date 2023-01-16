@@ -3,17 +3,26 @@ package net.fabricmc.tiantong.blocks;
 //import net.minecraft.server.Main;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.StairsBlock;
 import net.fabricmc.tiantong.items.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import static net.fabricmc.tiantong.TiantongMain.Tiantong;
 
 public class TBlocks {
+
+    //Ticket Barrier
+    public static final Block Ticket_Barrier_Entrance = new TicketBarrier(FabricBlockSettings.of(Material.METAL), false);
+    public static final Block Ticket_Barrier_Exit = new TicketBarrier(FabricBlockSettings.of(Material.METAL), true);
+    //Stairs
     public static final StairsBlock Iron_Stairs = new StairsBlock(Blocks.IRON_BLOCK.getDefaultState(), FabricBlockSettings.of(Material.METAL));
     public static final StairsBlock Black_Concrete_Stairs = new StairsBlock(Blocks.BLACK_CONCRETE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.BLACK_CONCRETE));
     public static final StairsBlock White_Concrete_Stairs = new StairsBlock(Blocks.WHITE_CONCRETE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.WHITE_CONCRETE));
@@ -50,5 +59,7 @@ public class TBlocks {
         Registry.register(Registries.BLOCK, new Identifier("tiantong", "green_concrete_stairs"), Green_Concrete_Stairs);
         Registry.register(Registries.BLOCK, new Identifier("tiantong", "magenta_concrete_stairs"), Magenta_Concrete_Stairs);
         Registry.register(Registries.BLOCK, new Identifier("tiantong", "orange_concrete_stairs"), Orange_Concrete_Stairs);
+        //Registry.register(Registries.BLOCK, new Identifier("tiantong", "ticket_barrier_entrance"), Ticket_Barrier_Entrance);
+        //Registry.register(Registries.BLOCK, new Identifier("tiantong", "ticket_barrier_exit"), Ticket_Barrier_Exit);
     }
 }

@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.client.realms.Request;
 import net.minecraft.client.realms.dto.PlayerInfo;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -30,15 +31,15 @@ public class TicketSystem {
 
     public static final String Balance = "OysterBank";
     public static final String Entrance = "Entrance";
-    public static final ScoreboardPlayerScore GetScore(World world, PlayerInfo player) {
+    public static final ScoreboardPlayerScore GetScore(World world, PlayerEntity player) {
         Check(world);
-        return world.getScoreboard().getPlayerScore(player.getName(), world.getScoreboard().getObjective(Balance));
+        return world.getScoreboard().getPlayerScore(player.getName().toString(), world.getScoreboard().getObjective(Balance));
     }
-    public static final boolean Pass(World world, int id, PlayerInfo player) {
+    public static final boolean Pass(World world, int id, PlayerEntity player) {
         Check(world);
+        final ScoreboardPlayerScore En = world.getScoreboard().getPlayerScore(player.getName().toString(), world.getScoreboard().getObjective(Entrance));
         if(id == 0) {
             if(GetScore(world, player).getScore() >= 0) {
-                final ScoreboardPlayerScore En = world.getScoreboard().getPlayerScore(player.getName(), world.getScoreboard().getObjective(Entrance));
                 if(En.getScore() == -1) {
                     final ScoreboardPlayerScore Sc = GetScore(world, player);
                     Sc.setScore(Sc.getScore() - 1000);
@@ -58,6 +59,7 @@ public class TicketSystem {
                 final ScoreboardPlayerScore Sc = GetScore(world, player);
                 Sc.setScore(Sc.getScore() - 50);
             }
+            En.setScore(-1);
             return PassOut;
         }
         return false;

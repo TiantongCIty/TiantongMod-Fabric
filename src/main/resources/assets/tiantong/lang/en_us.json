@@ -17,5 +17,7 @@
     "block.tiantong.blue_concrete_stairs": "Blue Concrete",
     "block.tiantong.purple_concrete_stairs": "Purple Concrete",
     "block.tiantong.magenta_concrete_stairs": "Magenta Concrete",
-    "block.tiantong.pink_concrete_stairs": "Pink Concrete"
+    "block.tiantong.pink_concrete_stairs": "Pink Concrete",
+    "gui.tiantong.charge": "Charged %d",
+    "gui.tiantong.balance": "Balance: %d"
 }

@@ -15,7 +15,10 @@ import net.minecraft.util.Identifier;
 import static net.fabricmc.tiantong.TiantongMain.Tiantong;
 
 public class TItems {
+    //Ticket Barrier
+    //Oyster
     public static final Item Oyster = new Oyster(new FabricItemSettings().maxCount(1));
+    //Concrete Stairs
     public static final Item Iron_Stairs = new BlockItem(TBlocks.Iron_Stairs, new FabricItemSettings());
     public static final Item Black_Concrete_Stairs = new BlockItem(TBlocks.Black_Concrete_Stairs, new FabricItemSettings());
     public static final Item White_Concrete_Stairs = new BlockItem(TBlocks.White_Concrete_Stairs, new FabricItemSettings());
@@ -52,6 +55,7 @@ public class TItems {
         Registry.register(Registries.ITEM, new Identifier("tiantong", "green_concrete_stairs"), Green_Concrete_Stairs);
         Registry.register(Registries.ITEM, new Identifier("tiantong", "magenta_concrete_stairs"), Magenta_Concrete_Stairs);
         Registry.register(Registries.ITEM, new Identifier("tiantong", "orange_concrete_stairs"), Orange_Concrete_Stairs);
+       // Registry.register(Registries.ITEM, new Identifier("", ""), )
         ItemGroupEvents.modifyEntriesEvent(Tiantong).register(content -> {
             content.add(Oyster);
             content.addAfter(Oyster, Iron_Stairs);
