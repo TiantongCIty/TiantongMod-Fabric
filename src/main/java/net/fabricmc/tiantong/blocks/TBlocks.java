@@ -20,8 +20,8 @@ import static net.fabricmc.tiantong.TiantongMain.Tiantong;
 public class TBlocks {
 
     //Ticket Barrier
-    public static final Block Ticket_Barrier_Entrance = new TicketBarrier(FabricBlockSettings.of(Material.METAL), false);
-    public static final Block Ticket_Barrier_Exit = new TicketBarrier(FabricBlockSettings.of(Material.METAL), true);
+    //public static final Block Ticket_Barrier_Entrance = new TicketBarrier(FabricBlockSettings.of(Material.METAL), false);
+    //public static final Block Ticket_Barrier_Exit = new TicketBarrier(FabricBlockSettings.of(Material.METAL), true);
     //Stairs
     public static final StairsBlock Iron_Stairs = new StairsBlock(Blocks.IRON_BLOCK.getDefaultState(), FabricBlockSettings.of(Material.METAL));
     public static final StairsBlock Black_Concrete_Stairs = new StairsBlock(Blocks.BLACK_CONCRETE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.BLACK_CONCRETE));
