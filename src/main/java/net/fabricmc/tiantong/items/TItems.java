@@ -3,7 +3,9 @@ package net.fabricmc.tiantong.items;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -16,6 +18,8 @@ import static net.fabricmc.tiantong.TiantongMain.Tiantong;
 
 public class TItems {
     //Ticket Barrier
+    public static final Item Ticket_Barrier_Entrance = new BlockItem(TBlocks.Ticket_Barrier_Entrance, new FabricItemSettings());
+    public static final Item Ticket_Barrier_Exit = new BlockItem(TBlocks.Ticket_Barrier_Exit, new FabricItemSettings());
     //Oyster
     public static final Item Oyster = new Oyster(new FabricItemSettings().maxCount(1));
     //Concrete Stairs
@@ -55,7 +59,8 @@ public class TItems {
         Registry.register(Registries.ITEM, new Identifier("tiantong", "green_concrete_stairs"), Green_Concrete_Stairs);
         Registry.register(Registries.ITEM, new Identifier("tiantong", "magenta_concrete_stairs"), Magenta_Concrete_Stairs);
         Registry.register(Registries.ITEM, new Identifier("tiantong", "orange_concrete_stairs"), Orange_Concrete_Stairs);
-       // Registry.register(Registries.ITEM, new Identifier("", ""), )
+        Registry.register(Registries.ITEM, new Identifier("tiantong", "ticket_barrier_entrance"), Ticket_Barrier_Entrance);
+        Registry.register(Registries.ITEM, new Identifier("tiantong", "ticket_barrier_exit"), Ticket_Barrier_Exit);
         ItemGroupEvents.modifyEntriesEvent(Tiantong).register(content -> {
             content.add(Oyster);
             content.addAfter(Oyster, Iron_Stairs);
@@ -75,6 +80,9 @@ public class TItems {
             content.addAfter(Blue_Concrete_Stairs, Purple_Concrete_Stairs);
             content.addAfter(Purple_Concrete_Stairs, Magenta_Concrete_Stairs);
             content.addAfter(Magenta_Concrete_Stairs, Pink_Concrete_Stairs);
+            content.addAfter(Pink_Concrete_Stairs, Ticket_Barrier_Entrance);
+            content.addAfter(Ticket_Barrier_Entrance,Ticket_Barrier_Exit);
         });
     }
+
 }

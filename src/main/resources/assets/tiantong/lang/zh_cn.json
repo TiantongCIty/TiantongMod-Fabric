@@ -17,5 +17,7 @@
     "block.tiantong.blue_concrete_stairs": "蓝色混凝土楼梯",
     "block.tiantong.purple_concrete_stairs": "紫色混凝土楼梯",
     "block.tiantong.magenta_concrete_stairs": "品红色混凝土楼梯",
-    "block.tiantong.pink_concrete_stairs": "粉红色混凝土楼梯"
+    "block.tiantong.pink_concrete_stairs": "粉红色混凝土楼梯",
+    "gui.tiantong.charge": "已充值 %d",
+    "gui.tiantong.balance": "余额: %d"
 }

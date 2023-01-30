@@ -32,21 +32,22 @@ import static com.ibm.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class TicketBarrier extends Block {
     public static final DirectionProperty FACING = DirectionProperty.of("facing");
-    public static final BooleanProperty EXIT = BooleanProperty.of("exit");
+    //public static final BooleanProperty EXIT = BooleanProperty.of("exit");
     public static final BooleanProperty OPEN = BooleanProperty.of("open");
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING);
-        builder.add(EXIT);
+        //builder.add(EXIT);
         builder.add(OPEN);
     }
     boolean isExit = false;
     public TicketBarrier(Settings settings, boolean isExit) {
         super(settings);
         this.isExit = isExit;
-        setDefaultState(getDefaultState().with(OPEN, false));
-        setDefaultState(getDefaultState().with(EXIT, isExit));
+        //setDefaultState(getDefaultState().with(FACING, Direction.NORTH));
+        //setDefaultState(getDefaultState().with(OPEN, false));
+        //setDefaultState(getDefaultState().with(EXIT, isExit));
     }
 
     public static ScoreboardPlayerScore GetScore(World world, PlayerEntity player) {
@@ -55,7 +56,12 @@ public class TicketBarrier extends Block {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         String Name = state.getBlock().getName().toString();
-        if(player.getHandItems() == TItems.Oyster) {
+        boolean contain = false;
+        for (var v: player.getHandItems()) {
+            if(v.getItem() == TItems.Oyster)
+                contain = true;
+        }
+        if(contain) {
             boolean Pass = TicketSystem.Pass(world, isExit ? 1 : 0 , player);
             if(Pass)
                 world.setBlockState(pos, state.with(OPEN, true));
