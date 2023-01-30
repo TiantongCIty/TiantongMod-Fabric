@@ -1,0 +1,28 @@
+{
+    "variants":{
+        "facing=west,open=true":{
+            "model":"tiantong:block/ticket_barrier_open"
+        },
+        "facing=east,open=true":{
+            "model":"tiantong:block/ticket_barrier_open"
+        },
+        "facing=north,open=true":{
+            "model":"tiantong:block/ticket_barrier_open"
+        },
+        "facing=south,open=true":{
+            "model":"tiantong:block/ticket_barrier_open"
+        },
+        "facing=west,open=false":{
+            "model":"tiantong:block/ticket_barrier_base"
+        },
+        "facing=east,open=false":{
+            "model":"tiantong:block/ticket_barrier_base"
+        },
+        "facing=north,open=false":{
+            "model":"tiantong:block/ticket_barrier_base"
+        },
+        "facing=south,open=false":{
+            "model":"tiantong:block/ticket_barrier_base"
+        }
+    }
+}
