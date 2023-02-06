@@ -1,7 +1,11 @@
 package net.fabricmc.tiantong;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.sun.jna.StringArray;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
 import java.io.InputStream;
@@ -13,27 +17,22 @@ import java.io.IOException;
 import java.io.File;
 import java.nio.file.Path;
 import org.slf4j.Logger;
+import com.google.gson.JsonObject;
 
 public class TiantongConfig {
-    protected static Properties properties;
-    protected static Path path;
-    protected static File file;
+    private static final String PATH = System.getProperty("usr.dir") + "/config/" + "tiantongclient.json";
     protected static Logger LOGGER = TiantongMain.LOGGER;
+    public static final JsonArray jsonObject = new JsonArray();
 
-    //String Sets
-    protected static String[] Banned_Items;
-
+    private static String[] Banned_Items;
 
     public static void initClass() {
-        path = getPath();
-        file = getDirectory();
-        LOGGER.warn(path.toString());
+        if(!Files.exists(Paths.get(PATH))) {
+
+        }
     }
 
-    public static Path getPath() {
-        return Paths.get(".");
-    }
-    public static final File getDirectory() {
-        return path.toFile();
+    public static void generateJson() {
+
     }
 }
