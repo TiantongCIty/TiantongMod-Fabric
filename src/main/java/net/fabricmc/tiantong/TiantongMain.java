@@ -36,6 +36,7 @@ public class TiantongMain implements ModInitializer {
 	public void onInitialize() {
 		TBlocks.InitBlocks();
 		TItems.InitItems();
+		TiantongConfig.initClass();
 		LOGGER.info("Welcome to Tiantong City");
 	}
 }

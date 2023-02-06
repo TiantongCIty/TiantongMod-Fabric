@@ -10,9 +10,16 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.fabricmc.tiantong.blocks.*;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.resource.featuretoggle.FeatureFlag;
+import net.minecraft.resource.featuretoggle.FeatureSet;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import org.apache.logging.log4j.core.config.Configurator;
+import org.apache.logging.log4j.core.config.properties.PropertiesConfiguration;
+import org.apache.logging.log4j.core.filter.AbstractFilterable;
 
 import static net.fabricmc.tiantong.TiantongMain.Tiantong;
 
@@ -83,6 +90,6 @@ public class TItems {
             content.addAfter(Pink_Concrete_Stairs, Ticket_Barrier_Entrance);
             content.addAfter(Ticket_Barrier_Entrance,Ticket_Barrier_Exit);
         });
-    }
 
+    }
 }

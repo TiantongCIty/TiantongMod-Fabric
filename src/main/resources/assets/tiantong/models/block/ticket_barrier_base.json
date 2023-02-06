@@ -1,6 +1,6 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:block/block",
+	"ambientocclusion": false,
+	"parent": "block/block",
 	"textures": {
 		"0": "tiantong:block/ticket_barrier",
 		"particle": "tiantong:block/ticket_barrier"
@@ -181,19 +181,5 @@
 			"rotation": [-8, 95, 0],
 			"scale": [0.35, 0.35, 0.36]
 		}
-	},
-	"groups": [
-		{
-			"name": "group",
-			"origin": [8, 8, 8],
-			"color": 0,
-			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-		},
-		{
-			"name": "door",
-			"origin": [8, 8, 8],
-			"color": 0,
-			"children": [12, 13]
-		}
-	]
+	}
 }

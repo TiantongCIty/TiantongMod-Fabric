@@ -3,10 +3,7 @@ package net.fabricmc.tiantong.blocks;
 //import net.minecraft.server.Main;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.fabricmc.tiantong.items.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
