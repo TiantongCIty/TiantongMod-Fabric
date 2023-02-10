@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import net.fabricmc.tiantong.items.*;
 import net.fabricmc.tiantong.blocks.*;
 
+import java.io.IOException;
+
 public class TiantongMain implements ModInitializer {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger("Tiantong");
@@ -23,6 +25,7 @@ public class TiantongMain implements ModInitializer {
 		TBlocks.InitBlocks();
 		TItems.InitItems();
 		TiantongConfig.initClass();
+
 		LOGGER.info("Welcome to Tiantong City");
 	}
 }

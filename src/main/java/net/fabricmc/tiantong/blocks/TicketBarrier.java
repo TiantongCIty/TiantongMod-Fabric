@@ -106,13 +106,18 @@ public class TicketBarrier extends Block {
         }
         if(contain) {
             boolean Pass = TicketSystem.Pass(world, isExit ? 1 : 0 , player);
-            if(Pass)
+            if(Pass) {
                 world.setBlockState(pos, state.with(OPEN, true));
+                world.scheduleBlockTick(pos, state.getBlock(), 40);
+                world.setBlockState(pos, state.with(OPEN, false));
+            }
+
             else
                 world.setBlockState(pos, state.with(OPEN, false));
         }
         return ActionResult.SUCCESS;
     }
+
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
