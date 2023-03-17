@@ -25,6 +25,7 @@ import net.minecraft.world.gen.carver.RavineCarverConfig;
 import net.minecraft.world.tick.Tick;
 import net.minecraft.world.tick.TickPriority;
 import org.apache.logging.log4j.core.config.Property;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Comparator;
@@ -84,6 +85,17 @@ public class TicketBarrier extends Block {
                 getVSBD(getSBP(4, 2, 14, 10, 13, 15), facing)
         );
     }
+
+    @Nullable
+    protected VoxelShape OutlineShape(BlockState state) {
+        Direction facing = state.get(FACING);
+        boolean isOpen = state.get(OPEN);
+        if(!isOpen)
+            return VoxelShapes.union(
+                    getVSBD(getSBP(0, -3, -3, 24, 20,20), facing)
+            );
+    }
+
     boolean isExit = false;
     public TicketBarrier(Settings settings, boolean isExit) {
         super(settings);
@@ -128,7 +140,7 @@ public class TicketBarrier extends Block {
     }
 
     public Box getSBP(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {
-        //getShapeByPixels
+        // ** getShapeByPixels **
         minX /= 16.0;
         minY /= 16.0;
         minZ /= 16.0;
@@ -141,11 +153,10 @@ public class TicketBarrier extends Block {
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0f,0f,0f,0f,0f,0f);
+        return initShape(state);
     }
 
-    //Copyright by MTR from Jonathan Ho
-    static VoxelShape getVSBD(Box boxin, Direction facing) {
+    static VoxelShape getVSBD(@NotNull Box boxin, @NotNull Direction facing) {
         double x1 = boxin.minX;
         double y1 = boxin.minY;
         double z1 = boxin.minZ;
@@ -168,7 +179,7 @@ public class TicketBarrier extends Block {
         }
         return VoxelShapes.cuboid(box);
     }
-    /*@Override
+    @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         //Tick tick = new Tick(this, pos,0, TickPriority.HIGH);
         if(isOpen(state))
@@ -182,5 +193,5 @@ public class TicketBarrier extends Block {
                 world.setBlockState(pos, state.with(OPEN, false));
         }
         world.setBlockState(pos, state.with(OPEN, false));
-    }*/
+    }
 }
